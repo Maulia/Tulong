@@ -1,13 +1,21 @@
 package com.example.user.tulong;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button policeButton;
+    Button fireButton;
+    Button hospitalButton;
+    Button relativesButton;
 
     TextView locationText;
 
@@ -29,6 +37,69 @@ public class MainActivity extends AppCompatActivity {
             double lng = gps.getLongitude();
             locationText = (TextView) findViewById(R.id.currentLocation);
             locationText.setText("Anda berada di...\nlat: " + lat + "\nlong: " + lng);
+
+            policeButton = (Button) findViewById(R.id.buttonPolice);
+            hospitalButton = (Button) findViewById(R.id.buttonHospital);
+            fireButton = (Button) findViewById(R.id.buttonFire);
+            relativesButton = (Button) findViewById(R.id.buttonRelatives);
+
+            policeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent hub = new Intent (MainActivity.this, HubungiActivity.class);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("option", "police");
+                    hub.putExtras(bundle);
+
+                    MainActivity.this.startActivity(hub);
+
+                }
+            });
+
+            hospitalButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent hub = new Intent (MainActivity.this, HubungiActivity.class);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("option", "hospital");
+                    hub.putExtras(bundle);
+
+                    MainActivity.this.startActivity(hub);
+
+                }
+            });
+
+
+            fireButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent hub = new Intent (MainActivity.this, HubungiActivity.class);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("option", "fire");
+                    hub.putExtras(bundle);
+
+                    MainActivity.this.startActivity(hub);
+
+                }
+            });
+
+            relativesButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent hub = new Intent (MainActivity.this, HubungiActivity.class);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("option", "relatives");
+                    hub.putExtras(bundle);
+
+                    MainActivity.this.startActivity(hub);
+
+                }
+            });
+
 
             Toast.makeText(getApplicationContext(), "Selesai", Toast.LENGTH_SHORT).show();
 
