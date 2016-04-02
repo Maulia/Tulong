@@ -1,17 +1,47 @@
 package com.example.user.tulong;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView locationText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getLocation();
     }
+
+    public void getLocation(){
+
+        GPSTracker gps = new GPSTracker(this);
+
+        if(gps.canGetLocation()){
+            //final Location location = gps.getLocation();
+            double lat = gps.getLatitude();
+            double lng = gps.getLongitude();
+            locationText = (TextView) findViewById(R.id.currentLocation);
+            locationText.setText("Anda berada di...\nlat: " + lat + "\nlong: " + lng);
+
+            Toast.makeText(getApplicationContext(), "Selesai", Toast.LENGTH_SHORT).show();
+
+        }else{
+            gps.showSettingsAlert();
+            Toast.makeText(getApplicationContext(), "Not active", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
