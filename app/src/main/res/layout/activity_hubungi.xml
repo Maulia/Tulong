@@ -10,5 +10,18 @@
         android:text="Medium Text"
         android:id="@+id/textView" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Menunggu..."
+        android:id="@+id/textResult" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textPlaceResult" />
+
 
 </LinearLayout>
