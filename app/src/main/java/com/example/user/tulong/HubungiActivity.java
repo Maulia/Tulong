@@ -77,7 +77,7 @@ public class HubungiActivity extends Activity {
 
             String apiKey = "AIzaSyCzuw8pBhNhb6nFdru4ULxTRAzFTJknbiE";
 
-            int radius = 1500;
+            int radius = 3000;
 
             //return null;
             String urlSearchPlaces ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?" +
