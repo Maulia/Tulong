@@ -3,9 +3,64 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    >
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I want this APP to work please"
+        android:id="@+id/textView"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Polisi"
+        android:id="@+id/buttonPolice"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="59dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pemadam Kebakaran"
+        android:id="@+id/buttonFire"
+        android:layout_below="@+id/buttonPolice"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rumah Sakit"
+        android:id="@+id/buttonHospital"
+        android:layout_above="@+id/buttonFire"
+        android:layout_toEndOf="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kerabat"
+        android:id="@+id/buttonRelatives"
+        android:layout_alignTop="@+id/buttonFire"
+        android:layout_alignStart="@+id/buttonHospital" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh Lokasi"
+        android:id="@+id/buttonRefresh"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/currentLocation"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/buttonRelatives" />
 
 </RelativeLayout>
