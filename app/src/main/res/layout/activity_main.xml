@@ -1,66 +1,83 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    >
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.user.tulong.Main2Activity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="172dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:weightSum="1"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            android:id="@+id/buttonPolice"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/pol" />
+
+        <Button
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+
+            android:id="@+id/buttonHospital"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/rs" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I want this APP to work please"
-        android:id="@+id/textView"
-        android:layout_alignParentStart="true" />
+        android:layout_gravity="right">
 
-    <Button
+        <Button
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+
+            android:id="@+id/buttonFire"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/ff" />
+
+        <Button
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+
+            android:id="@+id/buttonRelatives"
+            android:background="@mipmap/pals"
+            android:layout_gravity="right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="88dp">
+
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Refresh Location"
+            android:id="@+id/buttonRefresh" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Polisi"
-        android:id="@+id/buttonPolice"
-        android:layout_below="@+id/buttonRefresh"
-        android:layout_alignRight="@+id/buttonFire" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pemadam Kebakaran"
-        android:id="@+id/buttonFire"
-        android:layout_below="@+id/buttonPolice"
-        android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentLocation" />
+    </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rumah Sakit"
-        android:id="@+id/buttonHospital"
-        android:layout_above="@+id/buttonFire"
-        android:layout_toEndOf="@+id/textView" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kerabat"
-        android:id="@+id/buttonRelatives"
-        android:layout_alignTop="@+id/buttonFire"
-        android:layout_alignStart="@+id/buttonHospital" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Refresh Lokasi"
-        android:id="@+id/buttonRefresh"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
-        android:id="@+id/currentLocation"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true" />
-
-</RelativeLayout>
+</LinearLayout>
