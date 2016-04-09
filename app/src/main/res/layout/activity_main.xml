@@ -18,8 +18,8 @@
         android:layout_height="wrap_content"
         android:text="Polisi"
         android:id="@+id/buttonPolice"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="59dp" />
+        android:layout_below="@+id/buttonRefresh"
+        android:layout_alignRight="@+id/buttonFire" />
 
     <Button
         android:layout_width="wrap_content"
@@ -61,6 +61,6 @@
         android:text=""
         android:id="@+id/currentLocation"
         android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/buttonRelatives" />
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>
