@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent hub = new Intent (MainActivity.this, HubungiActivity.class);
 
                     Bundle bundle = new Bundle();
-                    bundle.putString("option", "fire");
+                    bundle.putString("option", "fire_station");
                     hub.putExtras(bundle);
 
                     MainActivity.this.startActivity(hub);
