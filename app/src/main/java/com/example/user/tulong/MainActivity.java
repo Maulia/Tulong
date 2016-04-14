@@ -1,8 +1,10 @@
 package com.example.user.tulong;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,14 +50,25 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent hub = new Intent (MainActivity.this, HubungiActivity.class);
 
+                    Intent calls = new Intent (Intent.ACTION_CALL);
+
                     Bundle bundle = new Bundle();
                     bundle.putString("option", "police");
                     hub.putExtras(bundle);
+                    //calls.setData(Uri.parse("6285776628700"));
+
 
                     MainActivity.this.startActivity(hub);
+                    Log.d("phonetes", String.valueOf(hub));
+                    String phone = String.valueOf(hub);
+
+                    calls.setData(Uri.parse("tel:" + phone));
+                    MainActivity.this.startActivity(calls);
+                    //dial(phone);
 
                 }
             });
+
 
             hospitalButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -110,7 +123,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    private void dial(final String number){
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel:", number, null)));
+    }
 
 
 

@@ -39,7 +39,7 @@ public class HubungiActivity extends Activity {
         textResult = (TextView) findViewById(R.id.textResult);
         textPlaceResult = (TextView) findViewById(R.id.textPlaceResult);
         activityTitle = (TextView) findViewById(R.id.textView);
-        activityTitle.setText("Hey");
+       // activityTitle.setText("Hey");
 
         Bundle bundle = getIntent().getExtras();
 
@@ -136,7 +136,10 @@ public class HubungiActivity extends Activity {
                     Log.d("test", "calling the details function");
                     String placeDetails = getPlaceDetails(placeId, i);
 
-                    tempResult[i] = (i+1)+". "+placeName+"\n"+placeDetails;
+                    if(placeDetails!=null){
+                        tempResult[i] = placeDetails;
+                        Log.d("rest", "result:"+tempResult[i]);
+                    }
                     Log.d("test", "hasil:"+tempResult[i]);
                 }
 
@@ -183,10 +186,10 @@ public class HubungiActivity extends Activity {
                 JSONObject objectDetails = new JSONObject(details);
                 JSONObject objectResult = (JSONObject) objectDetails.get("result");
 
-                String address = (String) objectResult.get("formatted_address");
+               // String address = (String) objectResult.get("formatted_address");
                 String phone = (String) objectResult.get("international_phone_number");
 
-                finalResult.append(address + " " + phone);
+                finalResult.append(phone);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
